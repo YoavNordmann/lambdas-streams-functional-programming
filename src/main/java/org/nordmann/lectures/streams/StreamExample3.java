@@ -17,9 +17,11 @@ public class StreamExample3 {
 	 */
 	public static void main(String[] args) {
 		
-		List<String> myList = Arrays.asList("a4", "a1", "a3", "a2", "b1", "c2", "c1");
+		List<String> myList = Arrays.asList(
+				"a4", "a1", "a3", "a2", "b1", "c2", "c1");
 		
-		long count = myList.stream().filter(new Predicate<String>() {
+		long count = myList.stream()
+				.filter(new Predicate<String>() {
 
 			@Override
 			public boolean test(String t) {

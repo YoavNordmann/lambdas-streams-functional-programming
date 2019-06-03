@@ -17,9 +17,12 @@ public class StreamExample1 {
 	 */
 	public static void main(String[] args) {
 		
-		List<String> myList = Arrays.asList("a4", "a1", "a3", "a2", "b1", "c2", "c1");
+		List<String> myList = Arrays.asList(
+				"a4", "a1", "a3", "a2", "b1", "c2", "c1");
 		
-		myList.stream().sorted().forEach(new Consumer<String>() {
+		myList.stream()
+		.sorted()
+		.forEach(new Consumer<String>() {
 			@Override
 			public void accept(String t) {
 				System.out.println(t);

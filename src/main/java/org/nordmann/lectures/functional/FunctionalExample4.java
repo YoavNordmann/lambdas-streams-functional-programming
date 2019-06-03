@@ -18,7 +18,8 @@ public class FunctionalExample4 {
 	 */
 	public static void main(String[] args) {
 		
-		List<String> myList = Arrays.asList("a4", "a1", "a3", "a2", "b1", "c2", "c1");
+		List<String> myList = Arrays.asList(
+				"a4", "a1", "a3", "a2", "b1", "c2", "c1");
 		
 		filterByPrefix(myList.stream(), getPredicate("b"));
 		

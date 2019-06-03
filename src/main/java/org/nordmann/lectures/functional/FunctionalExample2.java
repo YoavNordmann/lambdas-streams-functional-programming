@@ -16,9 +16,13 @@ public class FunctionalExample2 {
 	 */
 	public static void main(String[] args) {
 		
-		List<String> myList = Arrays.asList("a4", "a1", "a3", "a2", "b1", "c2", "c1");
+		List<String> myList = Arrays.asList(
+				"a4", "a1", "a3", "a2", "b1", "c2", "c1");
 		
-		myList.stream().filter(x -> x.endsWith("1")).map(String::toUpperCase).forEach(System.out::println);
+		myList.stream()
+		.filter(x -> x.endsWith("1"))
+		.map(String::toUpperCase)
+		.forEach(System.out::println);
 		
 	}
 	

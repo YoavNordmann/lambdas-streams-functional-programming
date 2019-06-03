@@ -10,9 +10,12 @@ public class FunctionalExample3 {
 	 * The main method.
 	 *
 	 * @param args the arguments
+	 * @throws InterruptedException 
 	 */
-	public static void main(String[] args) {
-		new Thread(FunctionalExample3::runBody).start();
+	public static void main(String[] args) throws InterruptedException {
+		Thread t = new Thread(FunctionalExample3::runBody);
+		t.start();
+		t.join();
 	}
 	
 	

@@ -13,7 +13,7 @@ public class StreamExample4 {
 
 	
 	/** The teast data count. */
-	public static int TEAST_DATA_COUNT = 10;
+	public static int TEST_DATA_COUNT = 10;
 
 	/**
 	 * The main method.
@@ -22,25 +22,19 @@ public class StreamExample4 {
 	 */
 	public static void main(String[] args) {
 
-		List<Integer> list = getTestData(TEAST_DATA_COUNT);
+		List<Integer> list = getTestData(TEST_DATA_COUNT);
 		
-		System.out.printf("Running Parallel Stream test on %s-core machine. Test Data Size: %s%n%n", 
-				Runtime.getRuntime().availableProcessors(), TEAST_DATA_COUNT);
+		System.out.printf("Running Parallel Stream test on %s-core machine. "
+				+ "Test Data Size: %s%n%n", 
+				Runtime.getRuntime().availableProcessors(), TEST_DATA_COUNT);
 		
-		System.out.printf("\nSingle Stream Version Time: %.3f seconds.%n", timingTest(list.stream()));
+		System.out.printf("\nSingle Stream Version Time: %.3f seconds.%n", 
+				timingTest(list.stream()));
 		
 		System.out.println("\n\n***********************************************************************\n");
 		
-		System.out.printf("\nParallel Stream Version Time: %.3f seconds.%n", timingTest(list.parallelStream()));
-		
-		ForkJoinPool.commonPool().submit(new Runnable() {
-			
-			@Override
-			public void run() {
-				// TODO Auto-generated method stub
-				
-			}
-		});
+		System.out.printf("\nParallel Stream Version Time: %.3f seconds.%n",
+				timingTest(list.parallelStream()));
 		
 	}
 
@@ -111,7 +105,7 @@ public class StreamExample4 {
 		List<Integer> list = new LinkedList<>();
 
 		for (int i = 0; i < num; i++) {
-			list.add(new Integer(i));
+			list.add(Integer.valueOf(i));
 		}
 
 		return list;
